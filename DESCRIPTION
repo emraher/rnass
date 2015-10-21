@@ -1,0 +1,13 @@
+Package: rnass
+Type: Package
+Title: Interface to USDA NASS Database
+Version: 0.1.0
+Author: Emrah Er
+Maintainer: Emrah Er <eer@eremrah.com>
+Description: A data download package around the public API for the USDA NASS.
+License: GPL (>= 2)
+LazyData: TRUE
+VignetteBuilder: knitr
+Imports: httr (>= 0.5),
+    jsonlite,
+    knitr
