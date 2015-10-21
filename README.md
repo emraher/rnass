@@ -1,14 +1,6 @@
 rnass
 =======
 
-```{r echo=FALSE}
-knitr::opts_chunk$set(
-  comment = "#>",
-  warning = FALSE,
-  message = FALSE
-)
-```
-
 [![Build Status](https://api.travis-ci.org/emraher/rnass.png)](https://travis-ci.org/emraher/rnass)
 
 ## Interface to USDA NASS QuickStats
