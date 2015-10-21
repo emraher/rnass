@@ -1,6 +1,6 @@
 #' Get data from the USDA NASS data query.
 #'
-#' Limit for data request would not return more than 50,000 records/rows.
+#' Data request will not return more than 50,000 records/rows.
 #' It is better to check count of records using nass_count()
 #'
 #' @export

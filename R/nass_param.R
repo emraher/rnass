@@ -1,6 +1,9 @@
 #' Get metadata about USDA NASS column/header names.
 #'
-#' Available names are:
+#' Get elements of different parameters.
+#'
+#' @export
+#' @param param A valid parameter value. Available names are:
 #' source_desc, sector_desc, group_desc, commodity_desc,
 #' class_desc, prodn_practice_desc, util_practice_desc, statisticcat_desc,
 #' unit_desc, short_desc, domain_desc, domaincat_desc, agg_level_desc,
@@ -9,10 +12,6 @@
 #' watershed_code, watershed_desc, congr_district_code, country_code,
 #' country_name, location_desc, year, freq_desc, begin_code, end_code,
 #' reference_period_desc, week_ending, load_time, value, and CV %
-#'
-#'
-#' @export
-#' @param param A valid parameter value
 #' @param token API key
 #' @return A list containing metadata as data frame.
 

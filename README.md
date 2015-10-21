@@ -19,7 +19,7 @@ From USDA/NASS:
 
 The Quick Stats application programming interface (API) provides direct access to the statistical information in the Quick Stats database. We invite developers to use this API and to give us feedback so we can continue to improve it." 
 
-`rnass` is an attempt to an interface to Quick Stats. Note that in order to use this package you will need and API key. Request your key from [here](http://quickstats.nass.usda.gov/api).
+`rnass` is an attempt to an interface to Quick Stats. Note that in order to use this package you will need an API key. Request your key from [here](http://quickstats.nass.usda.gov/api).
 
 ## Get rnass
 

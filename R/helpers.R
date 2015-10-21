@@ -3,7 +3,7 @@
 #' @keywords internal
 
 
-# CHECK IF THERE IS A API TOKEN AVAILABLE -------------------------------------
+# CHECK IF THERE IS AN API TOKEN AVAILABLE -------------------------------------
 check_key <- function(x){
   tmp <- if(is.null(x)) Sys.getenv("NASS_KEY", "") else x
   if(tmp == "") getOption("nasskey", stop("need an API key for NASS data")) else tmp
