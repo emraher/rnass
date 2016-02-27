@@ -4,7 +4,7 @@
 \alias{nass_param}
 \title{Get metadata about USDA NASS column/header names.}
 \usage{
-nass_param(param = NULL, token = NULL, ...)
+nass_param(param = NULL, token = NULL)
 }
 \arguments{
 \item{param}{A valid parameter value}

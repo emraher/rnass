@@ -16,7 +16,7 @@ nass_count(source_desc = NULL, sector_desc = NULL, group_desc = NULL,
   congr_district_code = NULL, country_code = NULL, country_name = NULL,
   location_desc = NULL, year = NULL, freq_desc = NULL,
   begin_code = NULL, end_code = NULL, reference_period_desc = NULL,
-  week_ending = NULL, load_time = NULL, token = NULL, ...)
+  week_ending = NULL, load_time = NULL, token = NULL)
 }
 \arguments{
 \item{source_desc}{See USDA webpage for explanations. You can use nass_param() to see the values.}
