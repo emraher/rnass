@@ -126,10 +126,15 @@ nass_data <- function(source_desc = NULL,
   url <- paste0("http://quickstats.nass.usda.gov/api/api_GET/?key=", token, "&")
 
   if (!is.null(args)) {
+    url1 <- httr::modify_url(url, query = args)
+    url1 <- paste0(url1, "&format=json")
+    temp1 <- httr::GET(url1)
+    tt <- check_response(temp)
+
     url <- httr::modify_url(url, query = args)
     url <- paste0(url, "&format=csv")
     temp <- httr::GET(url)
-    tt <- check_response(temp)
+
     if (is(temp$headers, "list")){
       all <- read.csv(url, header = TRUE, sep = ",", dec = ".", na.strings = "")
       all$Value <- gsub(",", "", all$Value, ignore.case = TRUE)
