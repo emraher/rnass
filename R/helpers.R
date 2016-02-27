@@ -22,7 +22,7 @@ check_response <- function(x){
     warning(paste0("Unauthorized, Error ", x$status_code, ". Token is not valid!"))
   } else if(x$status_code == 200){
     # NO ERRORS ------------------------------------------------------------------
-    if(x$headers$`httr::content-type` == 'application/json'){
+    if(x$headers$`content-type` == 'application/json'){
       # JSON COUNT --------------------------------------------------------------
       if (names(httr::content(x)) != "data"){
         res <- httr::content(x, as = 'text', encoding = "UTF-8")
@@ -33,10 +33,10 @@ check_response <- function(x){
       } else {
         warning("Something happened. Probably you broke internet!")
       }
-    } else if (x$headers$`httr::content-type` == 'text/xml') {
+    } else if (x$headers$`content-type` == 'text/xml') {
       # XML DATA -------------------------------------------------------------------
       out <- names(httr::content(x))
-    } else if (x$headers$`httr::content-type` == 'text/csv'){
+    } else if (x$headers$`content-type` == 'text/csv'){
       # CSV DATA -------------------------------------------------------------------
       out <- names(httr::content(x))
     } else {
