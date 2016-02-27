@@ -15,9 +15,7 @@
 #' @param token API key
 #' @return A list containing metadata as data frame.
 
-nass_param <- function(param = NULL, token = NULL, ...){
-  require(httr)
-  require(jsonlite)
+nass_param <- function(param = NULL, token = NULL){
 
   token <- check_key(token)
   if (!is.null(param)) {

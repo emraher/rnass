@@ -82,11 +82,9 @@ nass_data <- function(source_desc = NULL,
                        reference_period_desc = NULL,
                        week_ending = NULL,
                        load_time = NULL,
-                       token = NULL, ...){
+                       token = NULL){
   token <- check_key(token)
 
-  require(httr)
-  require(jsonlite)
 
   args <- list(source_desc = source_desc,
                sector_desc = sector_desc,
@@ -135,7 +133,7 @@ nass_data <- function(source_desc = NULL,
     tt <- check_response(temp)
 
     if (is(temp$headers, "list")){
-      data <- fromJSON(url)
+      data <- jsonlite::fromJSON(url)
       data <- data[['data']]
       data$Value <- gsub(",", "", data$Value, ignore.case = TRUE)
       data$Value <- as.numeric(data$Value)

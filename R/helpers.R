@@ -22,23 +22,23 @@ check_response <- function(x){
     warning(paste0("Unauthorized, Error ", x$status_code, ". Token is not valid!"))
   } else if(x$status_code == 200){
     # NO ERRORS ------------------------------------------------------------------
-    if(x$headers$`content-type` == 'application/json'){
+    if(x$headers$`httr::content-type` == 'application/json'){
       # JSON COUNT --------------------------------------------------------------
-      if (names(content(x)) != "data"){
-        res <- content(x, as = 'text', encoding = "UTF-8")
-        out <- fromJSON(res, simplifyVector = FALSE)
-      } else if (names(content(x)) == "data") {
+      if (names(httr::content(x)) != "data"){
+        res <- httr::content(x, as = 'text', encoding = "UTF-8")
+        out <- jsonlite::fromJSON(res, simplifyVector = FALSE)
+      } else if (names(httr::content(x)) == "data") {
         # JSON DATA ----------------------------------------------------------------
-        out <- names(content(x))
+        out <- names(httr::content(x))
       } else {
         warning("Something happened. Probably you broke internet!")
       }
-    } else if (x$headers$`content-type` == 'text/xml') {
+    } else if (x$headers$`httr::content-type` == 'text/xml') {
       # XML DATA -------------------------------------------------------------------
-      out <- names(content(x))
-    } else if (x$headers$`content-type` == 'text/csv'){
+      out <- names(httr::content(x))
+    } else if (x$headers$`httr::content-type` == 'text/csv'){
       # CSV DATA -------------------------------------------------------------------
-      out <- names(content(x))
+      out <- names(httr::content(x))
     } else {
       warning("Something happened. Probably you broke internet!")
     }
