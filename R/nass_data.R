@@ -129,7 +129,7 @@ nass_data <- function(source_desc = NULL,
     url1 <- httr::modify_url(url, query = args)
     url1 <- paste0(url1, "&format=json")
     temp1 <- httr::GET(url1)
-    tt <- check_response(temp)
+    tt <- check_response(temp1)
 
     url <- httr::modify_url(url, query = args)
     url <- paste0(url, "&format=csv")
