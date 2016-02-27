@@ -85,6 +85,9 @@ nass_data <- function(source_desc = NULL,
                        token = NULL, ...){
   token <- check_key(token)
 
+  require(httr)
+  require(jsonlite)
+
   args <- list(source_desc = source_desc,
                sector_desc = sector_desc,
                group_desc = group_desc,

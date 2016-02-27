@@ -84,6 +84,8 @@ nass_count <- function(source_desc = NULL,
                        week_ending = NULL,
                        load_time = NULL,
                        token = NULL, ...){
+  require(httr)
+  require(jsonlite)
 
   token <- check_key(token)
 

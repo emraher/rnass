@@ -16,6 +16,9 @@
 #' @return A list containing metadata as data frame.
 
 nass_param <- function(param = NULL, token = NULL, ...){
+  require(httr)
+  require(jsonlite)
+
   token <- check_key(token)
   if (!is.null(param)) {
     url <- paste0("http://quickstats.nass.usda.gov/api/get_param_values/?key=", token, "&param=", param )
